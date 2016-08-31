@@ -1,49 +1,12 @@
-var USER_DATE = {
-  name: 'Felipe Pontes',
-  username: 'felipemfp',
-  image: 'https://avatars2.githubusercontent.com/u/8146112?s=460'
-}
-
 var React = require('react');
 var ReactDOM = require('react-dom');
+var routes = require('./config/routes');
+var Raven = require('raven-js');
 
-var ProfilePic = React.createClass({
-  render: function() {
-    return (<img src={this.props.imageUrl} style={{height: 100,width: 100}}/>)
-  }
-});
+var sentryKey = 'fca245742c2548fc900c19625c9c8f6c';
+var sentryApp = '95812';
+var sentryUrl = 'https://' + sentryKey + '@app.sentry.io/' + sentryApp;
 
-var ProfileLink = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <a href={'https://www.github.com/' + this.props.username}>
-          {this.props.username}
-        </a>
-      </div>
-    )
-  }
-});
+Raven.config(sentryUrl).install();
 
-var ProfileName = React.createClass({
-  render: function() {
-    return (
-      <div>{this.props.name}</div>
-    )
-  }
-});
-
-var Avatar = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <ProfilePic imageUrl={this.props.user.image}/>
-        <ProfileName name={this.props.user.name}/>
-        <ProfileLink username={this.props.user.username}/>
-      </div>
-    )
-  }
-});
-
-ReactDOM.render(
-  <Avatar user={USER_DATE}/>, document.getElementById('app'))
+ReactDOM.render(routes, document.getElementById('app'))

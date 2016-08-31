@@ -10,8 +10,10 @@
   "author": "Felipe Pontes <felipemfpontes@gmail.com> (http://felipemfp.github.io)",
   "license": "ISC",
   "dependencies": {
+    "raven-js": "^3.6.0",
     "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "react-dom": "^15.3.1",
+    "react-router": "^2.7.0"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
