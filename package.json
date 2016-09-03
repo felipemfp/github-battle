@@ -1,11 +1,11 @@
 {
   "name": "github-battle",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pick two users and let's go to the battle.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "production": "webpack -p"
+    "production": "NODE_ENV=Production webpack -p"
   },
   "author": "Felipe Pontes <felipemfpontes@gmail.com> (http://felipemfp.github.io)",
   "license": "ISC",
