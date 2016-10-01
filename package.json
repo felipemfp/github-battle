@@ -10,6 +10,7 @@
   "author": "Felipe Pontes <felipemfpontes@gmail.com> (http://felipemfp.github.io)",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.14.0",
     "raven-js": "^3.6.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
