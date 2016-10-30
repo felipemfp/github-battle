@@ -4,6 +4,7 @@ import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
 import MainWrapper from './MainWrapper'
 import {Link} from 'react-router'
+import Loading from './Loading'
 
 const StartOver = (props) => {
   return (
@@ -19,9 +20,7 @@ const StartOver = (props) => {
 
 const Results = (props) => {
   if (props.isLoading === true) {
-    return (
-      <p>Loading!</p>
-    )
+    return <Loading/>
   }
 
   if (props.scores[0] === props.scores[1]) {
@@ -33,8 +32,12 @@ const Results = (props) => {
     )
   }
 
-  let winningIndex = props.scores[0] > props.scores[1] ? 0 : 1;
-  let losingIndex = winningIndex === 0 ? 1 : 0;
+  let winningIndex = props.scores[0] > props.scores[1]
+    ? 0
+    : 1;
+  let losingIndex = winningIndex === 0
+    ? 1
+    : 0;
   return (
     <MainWrapper>
       <h1>Results</h1>

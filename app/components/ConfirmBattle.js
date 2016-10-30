@@ -4,11 +4,15 @@ import {Link} from 'react-router'
 import UserDetails from './UserDetails'
 import UserDetailsWrapper from './UserDetailsWrapper'
 import MainWrapper from './MainWrapper'
+import Loading from './Loading'
 
 const ConfirmBattle = (props) => {
-  return props.isLoading === true
-    ? <div>Loading...</div>
-    : <MainWrapper>
+  if (props.isLoading === true) {
+    return <Loading/>
+  }
+
+  return (
+    <MainWrapper>
       <h1>Confirm Players</h1>
       <div className="col-sm-8 col-sm-offset-2">
         <UserDetailsWrapper header="Player One">
@@ -33,6 +37,7 @@ const ConfirmBattle = (props) => {
         </div>
       </div>
     </MainWrapper>
+  )
 }
 
 ConfirmBattle.propTypes = {
