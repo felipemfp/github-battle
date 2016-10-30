@@ -1,16 +1,16 @@
 import axios from 'axios'
 
-const host = 'https://api.github.com';
-const id = 'YOUR_CLIENT_ID';
-const secret = 'YOUR_SECRET_ID';
-const param = `?client_id=${id}&client_secret=${secret}`;
+const HOST = 'https://api.github.com';
+const ID = 'YOUR_CLIENT_ID';
+const SECRET = 'YOUR_SECRET_ID';
+const PARAM = `?client_id=${ID}&client_secret=${SECRET}`;
 
 const getUserInfo = (username) => {
-  return axios.get(`${host}/users/${username}${param}`);
+  return axios.get(`${HOST}/users/${username}${PARAM}`);
 }
 
 const getRepos = (username) => {
-  return axios.get(`${host}/users/${username}/repos${param}&per_page=100`);
+  return axios.get(`${HOST}/users/${username}/repos${PARAM}&per_page=100`);
 }
 
 const getTotalStars = (repos) => {
