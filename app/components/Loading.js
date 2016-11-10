@@ -37,7 +37,7 @@ class Loading extends React.Component {
     }, this.props.speed)
   }
 
-  componentWillMount() {
+  componentWillUnmount() {
     clearInterval(this.interval)
   }
 
