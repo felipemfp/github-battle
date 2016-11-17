@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "production": "NODE_ENV=production webpack -p",
-    "publish": "git add dist && git commit -m 'Build :up:' && git subtree push --prefix dist origin gh-pages"
+    "publish": "git subtree push --prefix dist origin gh-pages"
   },
   "author": "Felipe Pontes <felipemfpontes@gmail.com> (http://felipemfp.github.io)",
   "license": "ISC",
